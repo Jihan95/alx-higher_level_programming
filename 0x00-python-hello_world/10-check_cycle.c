@@ -15,8 +15,9 @@ int check_cycle(listint_t *list)
 		return (0);
 	while (fp != NULL && fp->next != NULL)
 	{
+		sp = sp->next;
+		fp = fp->next->next;
 		if (sp == fp)
 			return (1);
-		sp = sp->next;
-		fp = fp->next->next; }
+	}
 	return (0); }
