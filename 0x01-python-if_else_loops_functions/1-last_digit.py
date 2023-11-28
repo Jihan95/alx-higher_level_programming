@@ -3,7 +3,7 @@ import random
 number = random.randint(-10000, 10000)
 print(f'Last digit of {number:d} is', end=" ")
 if (number < 0):
-    number = -1 * (abs(number) % 10)
+    number %= -10
 else:
     number %= 10
 if (number > 5):
