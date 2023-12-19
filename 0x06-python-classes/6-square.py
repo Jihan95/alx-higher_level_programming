@@ -90,8 +90,9 @@ class Square:
         """prints in stdout the square with the character #"""
         if self.__size == 0:
             print()
-        for i in range(self.__position[1]):
-            print()
-        for _ in range(self.__size):
-            print(' ' * self.__position[0], end='')
-            print('#' * self.__size)
+        else:
+            for i in range(self.__position[1]):
+                print()
+            for _ in range(self.__size):
+                print(' ' * self.__position[0], end='')
+                print('#' * self.__size)
