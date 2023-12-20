@@ -103,13 +103,13 @@ class Square:
         Returns:
             a square to print
         """
-        rlist = []
+        sqr_str = ''
         if self.__size == 0:
-            return "\n"
+            return sqr_str
         else:
-            for _ in range(self.__position[1]):
-                rlist.append("\n")
-            for _ in range(self.__size):
-                rlist.append(' ' * self.__position[0])
-                rlist.append('#' * self.__size + '\n')
-        return "".join(rlist)
+            for i in range(self.__position[1]):
+                sqr_str += '\n'
+            for j in range(self.__size - 1):
+                sqr_str += ' ' * self.__position[0] + '#' * self.__size + '\n'
+            sqr_str += ' ' * self.__position[0] + '#' * self.__size
+        return sqr_str
