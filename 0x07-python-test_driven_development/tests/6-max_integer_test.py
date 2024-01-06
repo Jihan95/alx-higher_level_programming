@@ -2,7 +2,8 @@
 """Unittest for max_integer([..])
 """
 import unittest
-max_integer = __import__('6-max_integer').max_integer
+max_integer = __import__('6-max_integer').max_integeri
+
 
 class TestMaxInteger(unittest.TestCase):
     """
@@ -43,7 +44,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_not_list(self):
         """
         Function to test max_integer function
-        in case of input is not alist or containing 
+        in case of input is not alist or containing
         non numbers elements
         """
         not_list = (5, 10)
