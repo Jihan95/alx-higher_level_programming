@@ -27,12 +27,13 @@ class BaseGeometry():
         TypeError: if value isn't an integer
         ValueError: if value is less than or equal 0
         """
-        if not isinstance(name, str):
+        if type(name) != str:
             raise TypeError("{} must be a string".format(name))
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
 
 class Rectangle(BaseGeometry):
     """
