@@ -23,7 +23,7 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix_divided() missing 1 required positional"
                         "argument: 'div'")
     if div == float('inf') or div == -float('inf'):
-        return [[ 0.0 for item in row] for row in matrix]
+        return [[0.0 for item in row] for row in matrix]
     res_matrix = []
     row_len = len(matrix[0])
     for row in matrix:
