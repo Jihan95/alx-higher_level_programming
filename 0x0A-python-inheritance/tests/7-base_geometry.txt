@@ -6,6 +6,10 @@
 Traceback (most recent call last):
 	...
 TypeError: name must be an integer
+>>> bg.integer_validator(['age'], 10)
+Traceback (most recent call last):
+        ...
+TypeError: ['age'] must be a string
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
         ...
