@@ -33,21 +33,17 @@ class TestMaxInteger(unittest.TestCase):
         lis = [-1, 0, -8, 8, -2]
         self.assertEqual(max_integer(lis), max(lis))
 
-    def test_none_list(self):
+    def test_empty_list(self):
         """
         Function to test max_integer function
-        in case of input is None
+        in case of input is empty
         """
-        lis = None
+        lis = []
         self.assertEqual(max_integer(lis), None)
 
-    def test_not_list(self):
+    def test_one_el_list(self):
         """
-        Function to test max_integer function
-        in case of input is not alist or containing
-        non numbers elements
+        Function to test one element list
         """
-        not_list = (5, 10)
-        lis = ['cat', '1', '2']
-        self.assertRaises(TypeError, max_integer, not_list)
-        self.assertRaises(ValueError, max_integer, lis)
+        lis = [1]
+        self.assertEqual(max_integer(lis), max(lis))
