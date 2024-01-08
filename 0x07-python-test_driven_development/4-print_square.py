@@ -11,6 +11,8 @@ def print_square(size):
     Parameters:
     -size (int): the length of square
     """
+    if size is None:
+        raise TypeError("print_square() missing 1 required positional argument: 'size'")
     if type(size) is float and size < 0:
         raise TypeError("size must be an integer")
     if not isinstance(size, int):
