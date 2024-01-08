@@ -12,12 +12,16 @@ def text_indentation(text):
     Parameters:
     - text (str): the text to be printed
     """
+    if text is None:
+        raise TypeError("text_indentation() missing 1 required"
+                        " positional argument: 'text'")
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     flag = 0
     for alpha in text:
         if flag == 1:
             print("\n")
+            pass
         if alpha in ['.', '?', ':']:
             print(alpha, end='')
             flag = 1
