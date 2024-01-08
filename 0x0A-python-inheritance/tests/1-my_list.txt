@@ -1,0 +1,15 @@
+>>> MyList = __import__('1-my_list').MyList
+>>> normal_list = MyList([6, 7, 5, -1, -10, 0, 8])
+>>> empty_list = MyList([])
+>>> equal_list = MyList([2, 2, 2, 2, 2])
+>>> bad_list = MyList([5, 'car', 10])
+>>> normal_list.print_sorted()
+[-10, -1, 0, 5, 6, 7, 8]
+>>> empty_list.print_sorted()
+[]
+>>> equal_list.print_sorted()
+[2, 2, 2, 2, 2]
+>>> bad_list.print_sorted()
+Traceback (most recent call last):
+	...
+ValueError: list must be a list of integers
