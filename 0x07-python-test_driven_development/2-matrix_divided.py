@@ -16,6 +16,14 @@ def matrix_divided(matrix, div):
     The divided matrix
     """
     err = "matrix must be a matrix (list of lists) of integers/floats"
+    if matrix is None and div is None:
+        raise TypeError(" matrix_divided() missing 2 required positional"
+                        "arguments: 'matrix' and 'div'")
+    if div is None:
+        raise TypeError("matrix_divided() missing 1 required positional"
+                        "argument: 'div'")
+    if div == float('inf') or div == -float('inf'):
+        return [[ 0.0 for item in row] for row in matrix]
     res_matrix = []
     row_len = len(matrix[0])
     for row in matrix:
