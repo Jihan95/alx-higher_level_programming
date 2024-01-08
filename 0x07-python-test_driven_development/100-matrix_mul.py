@@ -16,8 +16,11 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
-    if len(m_a) != 0:
-        nca = len(m_a[0])
+    try:
+        if len(m_a) != 0:
+            nca = len(m_a[0])
+    except Exception:
+        raise TypeError("m_a must be a list of lists")
     fa, nra, fan = 0, 0, 0
     for row in m_a:
         if not isinstance(row, list):
@@ -29,8 +32,11 @@ def matrix_mul(m_a, m_b):
             for x in row:
                 if (type(x) not in [int, float]) and fan == 0:
                     fan = 1
-    if len(m_b) != 0:
-        ncb = len(m_b[0])
+    try:
+        if len(m_b) != 0:
+            ncb = len(m_b[0])
+    except Exception:
+        raise TypeError("m_b must be a list of lists")
     fb, nrb, fbn = 0, 0, 0
     for row in m_b:
         if not isinstance(row, list):
