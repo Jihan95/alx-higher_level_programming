@@ -12,6 +12,9 @@ def say_my_name(first_name, last_name=""):
     - first_name (string): the first name
     - last_name (string): the last name
     """
+    if first_name is None:
+        raise TypeError("say_my_name() missing 1 required positional"
+                        " argument: 'first_name'")
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
