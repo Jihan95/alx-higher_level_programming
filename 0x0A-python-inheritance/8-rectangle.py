@@ -5,7 +5,7 @@ and a recatangle class
 """
 
 
-class BaseGeometry():
+class BaseGeometry:
     """
     an abstract class for any geometry shape
     """
