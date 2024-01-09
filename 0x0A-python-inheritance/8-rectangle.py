@@ -47,7 +47,7 @@ class Rectangle(BaseGeometry):
         """
         Fanction that instantiate a Rectangle object
         """
-        BaseGeometry.integer_validator(self, "width", width)
-        BaseGeometry.integer_validator(self, "height", height)
+        super(Rectangle, self).integer_validator("width", width)
+        super(Rectangle, self).integer_validator("height", height)
         self.__width = width
         self.__height = height
