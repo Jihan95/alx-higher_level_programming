@@ -119,7 +119,10 @@ class Rectangle(Base):
         """
         Function to display a rectangle
         """
+        for _ in range(self.__y):
+            print()
         for _ in range(self.__height):
+            print(' ' * self.__x, end='')
             print('#' * self.__width)
 
     def __str__(self):
@@ -133,3 +136,33 @@ class Rectangle(Base):
                 self.__width,
                 self.__height
                 )
+
+    def update(self, *args, **kwargs):
+        """
+        Function to update object attributes
+        args arrangement:
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+        """
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        if len(args) > 0:
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Function that returns the dictionary representation of a Rectangle
+        """
+        return {
+                "id" : self.id,
+                "width" : self.width,
+                "height" : self.height,
+                "x" : self.x,
+                "y" : self.y
+                }
