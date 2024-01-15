@@ -37,7 +37,7 @@ class Base:
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
-        return str(list_dictionaries)
+        return dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
