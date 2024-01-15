@@ -3,7 +3,7 @@
 This model contains tests for class base
 """
 import unittest
-from json import loads
+from json import loads, load
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -102,10 +102,15 @@ class TestBase(unittest.TestCase):
         list_rectangles_output = Rectangle.load_from_file()
 
         self.assertEqual(
-                sorted((r.width, r.height, r.x, r.y) for r in list_rectangles_input),
-                sorted((r.width, r.height, r.x, r.y) for r in list_rectangles_output)
+                sorted(
+                    (r.width, r.height, r.x, r.y)
+                    for r in list_rectangles_input
+                    ),
+                sorted(
+                    (r.width, r.height, r.x, r.y)
+                    for r in list_rectangles_output
+                    )
                 )
-
 
         s1 = Square(5)
         s2 = Square(7, 9, 1)
@@ -119,3 +124,13 @@ class TestBase(unittest.TestCase):
                 sorted((s.size, s.x, s.y) for s in list_squares_input),
                 sorted((s.size, s.x, s.y) for s in list_squares_output)
                 )
+
+    def test_save_to_file(self):
+        """unit test for save_to_file method"""
+
+        Rectangle.save_to_file([])
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(f.read(), '[]')
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
