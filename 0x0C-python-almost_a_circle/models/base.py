@@ -74,24 +74,12 @@ class Base:
         Args:
         **dictionary: instance attributes
         """
-        instance = cls(10, 7, 0, 0)
+        instance = None
         if cls.__name__ == 'Rectangle':
-            cls.update(
-                    instance,
-                    id=dictionary['id'],
-                    x=dictionary['x'],
-                    y=dictionary['y'],
-                    width=dictionary['width'],
-                    height=dictionary['height']
-                    )
-        else:
-            cls.update(
-                    instance,
-                    id=dictionary['id'],
-                    x=dictionary['x'],
-                    y=dictionary['y'],
-                    size=dictionary['size']
-                    )
+            instance = cls(1, 1)
+        elif cls.__name__ = 'Square':
+            instance = cls(1)
+        cls.update(instance, **dictionary)
         return instance
 
     @classmethod
