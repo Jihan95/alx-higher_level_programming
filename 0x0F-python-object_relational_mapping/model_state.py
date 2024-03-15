@@ -8,7 +8,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class State(Base):
+
+class State(Base):i
     """
     define state class that links to state table in database
 
