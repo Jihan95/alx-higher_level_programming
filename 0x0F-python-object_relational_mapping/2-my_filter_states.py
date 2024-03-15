@@ -19,6 +19,7 @@ if __name__ == '__main__':
         cursor.execute(query.format(sys.argv[4]))
         results = cursor.fetchall()
         for row in results:
-            print(row)
+            if row[1] == sys.argv[4]:
+                print(row)
         cursor.close()
         connection.close()
