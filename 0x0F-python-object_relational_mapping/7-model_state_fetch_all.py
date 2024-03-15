@@ -12,6 +12,7 @@ second = sys.argv[2]
 third = sys.argv[3]
 en = 'mysql+mysqldb://{}:{}@localhost/{}'.format(first, second, third)
 engine = create_engine(en, pool_pre_ping=True)
+Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
