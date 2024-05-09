@@ -1,2 +1,1 @@
-# function peak complixty
-O(1)
+1
