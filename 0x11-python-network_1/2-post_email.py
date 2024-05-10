@@ -14,6 +14,11 @@ if __name__ == "__main__":
     email = sys.argv[2]
     data = urllib.parse.urlencode({'email': email}).encode('utf-8')
     req = urllib.request.Request(url, data=data, method='POST')
-    with urllib.request.urlopen(req) as response:
-        response_data = response.read().decode('utf-8')
-        print(response)
+    try:
+        with urllib.request.urlopen(req) as response:
+            response_data = response.read().decode('utf-8')
+            print(response_data)
+    except urllib.error.URLError as e:
+        print("Error:", e.reason)
+    except Exception as e:
+        print("An error occurred:", e)
