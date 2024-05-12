@@ -8,5 +8,5 @@ if __name__ == "__main__":
     print("Body response:")
     print("\t- type : ", end='')
     print(type(response.text))
-    if response.ok:
-        print("\t- content : OK")
+    print("\t- content : ", end='')
+    print(response.text)
