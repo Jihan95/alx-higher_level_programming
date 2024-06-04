@@ -6,5 +6,5 @@ request(url, (err, res, body) => {
   if (err) {
     console.log(err);
   }
-  console.log(JSON.parse(body).title);
+  console.log(JSON.parse(body).title)
 });
